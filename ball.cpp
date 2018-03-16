@@ -7,31 +7,23 @@
 class Ball
 {
 	private:
-		std::string m_color;
-		double m_radius;
+		std::string m_color = "black";
+		double m_radius = 10.0;
 	public:
-		Ball(const std::string &color)
+		Ball(const std::string &color): m_color(color)
 		{
-			m_color = color;
-			m_radius = 10.0;
 		}
 
-		Ball(double radius)
+		Ball(double radius): m_radius(radius)
 		{
-			m_color = "black";
-			m_radius = radius;
 		}			
 
-		Ball(const std::string &color, double radius)
+		Ball(const std::string &color, double radius): m_color(color), m_radius(radius)
 		{
-			m_color = color;
-			m_radius = radius;
 		}	
 
-		Ball()
+		Ball() 
 		{
-			m_color = "black";
-			m_radius = 10.0;
 			
 		}
 

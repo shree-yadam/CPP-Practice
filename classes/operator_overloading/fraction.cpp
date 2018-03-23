@@ -1,8 +1,11 @@
 #include <iostream>
 #include <cassert>
 
+//#define __1A__
+//#define __1B__
 //#define __1C__
 #define __OPERATOR_IN_OUT__
+
 class Fraction
 {
 	private:

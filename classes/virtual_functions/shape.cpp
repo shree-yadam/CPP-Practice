@@ -79,6 +79,8 @@ class Circle:public Shape
 			out<<"Circle("<<m_center<<", radius "<<m_radius<<")";
 			return out;
 		}
+
+		int getRadius(){  return m_radius;}
 };
 
 /*
@@ -99,7 +101,22 @@ int main()
 
 int getLargestRadius(std::vector<Shape*> v)
 {
+	int maxRadius = 0;
 
+	Circle *cp;
+	
+	for(int i = 0; i<v.size(); i++)
+	{
+		cp = dynamic_cast<Circle *>(v[i]);
+
+		if(cp != nullptr)
+		{
+			if(cp->getRadius() > maxRadius)
+				maxRadius = cp->getRadius();
+		}
+
+	}
+	return maxRadius;
 }
 
 int main()
@@ -117,4 +134,7 @@ int main()
        	std::cout << "The largest radius is: " << getLargestRadius(v) << '\n'; // write this function
  
 	// delete each element in the vector here
+ 	for(int i = 0; i< v.size(); i++)
+		delete v[i];
+
 }
